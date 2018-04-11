@@ -21,21 +21,21 @@ simOutputs_ANTICOAG = cohort_ANTICOAG.simulate()
 PathCls.graph_sample_path(
     sample_path=simOutputs_NONE.get_survival_curve(),
     title='Survival curve',
-    x_label='Simulation time step',
+    x_label='Simulation time step (no therapy)',
     y_label='Number of alive patients'
     )
 
 PathCls.graph_sample_path(
     sample_path=simOutputs_ANTICOAG.get_survival_curve(),
     title='Survival curve',
-    x_label='Simulation time step',
+    x_label='Simulation time step (anticoagulation therapy)',
     y_label='Number of alive patients'
     )
 
 # graph histogram of survival times
 Figs.graph_histogram(
     data=simOutputs_NONE.get_survival_times(),
-    title='Survival times of patients with HIV',
+    title='Survival times of patients with Stroke (no therapy)',
     x_label='Survival time (years)',
     y_label='Counts',
     bin_width=1
@@ -43,7 +43,7 @@ Figs.graph_histogram(
 
 Figs.graph_histogram(
     data=simOutputs_ANTICOAG.get_survival_times(),
-    title='Survival times of patients with HIV',
+    title='Survival times of patients with Stroke (anticoagulation therapy)',
     x_label='Survival time (years)',
     y_label='Counts',
     bin_width=1
